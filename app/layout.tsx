@@ -10,6 +10,7 @@ import { getAllDepartmentsInfo, getPermittedDepartmentsInfo } from "@/actions/de
 import localFont from "next/font/local";
 import "./globals.css";
 import { Metadata } from "next";
+import { en } from "@/en";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,8 +25,8 @@ const geistMono = localFont({
 
 
 export const metadata: Metadata = {
-  title: "TimeClock | Tahir Abbas",
-  description: "A time tracking application by Tahir Abbas",
+  title: en.MetaData.title,
+  description: en.MetaData.description,
 };
 
 

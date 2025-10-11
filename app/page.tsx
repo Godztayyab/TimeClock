@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge'
 import { FeaturesGrid } from '@/components/home/FeaturesGrid'
 import { TestCredentials } from '@/components/home/TestCredentials'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
+import { en } from '@/en'
 
 export default async function HomePage() {
     const user = await currentUser();
@@ -35,7 +36,7 @@ export default async function HomePage() {
                                 </div>
 
                                 <h1 className="text-5xl font-bold text-gray-900 tracking-tight">
-                                    Welcome to <span className="text-orange-600">TimeClock</span>
+                                    Welcome to <span className="text-orange-600">{en.app.name}</span>
                                 </h1>
 
                                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -86,7 +87,7 @@ export default async function HomePage() {
                                     </a>
                                     <span className="text-gray-300">•</span>
                                     <a
-                                        href="https://thetahirabbas.netlify.app/"
+                                        href="https://github.com/tahirabbas11/TimeClock"
                                         className="text-gray-600 hover:text-orange-600 transition-colors duration-200 flex items-center gap-2"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -103,7 +104,7 @@ export default async function HomePage() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        Tahir Abbas
+                                        {en.author.name}
                                     </a>
                                 </p>
                             </div>
