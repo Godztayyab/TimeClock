@@ -16,7 +16,7 @@ type Translation = {
 
 export const en: Translation = {
   emailConfig: {
-    defaultEmail: "onboarding@tahirabbas.com",
+    defaultEmail: "tahir.12868@iqra.edu.pk",
   },
   author: {
     name: "Tahir Abbas",
@@ -28,4 +28,4 @@ export const en: Translation = {
   app: {
     name: "TimeClock",
   },
-};  
+};
