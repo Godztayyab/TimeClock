@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { LogoutButton } from "@/components/auth/logout-button";
-import { DashboardIcon, ExitIcon, GearIcon } from "@radix-ui/react-icons";
+import { DashboardIcon, ExitIcon, GearIcon, BarChartIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Home } from "lucide-react";
 import { Avatar, AvatarImage } from "../ui/avatar";
@@ -68,4 +68,5 @@ const LINKS = [
   { label: "Home", href: "/", logo: <Home className="h-5 w-5" /> },
   { label: "Dashboard", href: "/dashboard", logo: <DashboardIcon className="h-5 w-5" /> },
   { label: "Settings", href: "/settings", logo: <GearIcon className="h-5 w-5" /> },
+  { label: "Payroll", href: "/payments", logo: <BarChartIcon className="h-5 w-5" /> },
 ];

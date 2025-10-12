@@ -1,6 +1,6 @@
 'use client'
 
-import { Department, EmployeeDepartment, TimeEntry, TimeEntryStatus } from '@prisma/client'
+import { Department, TimeEntry, TimeEntryStatus } from '@prisma/client'
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import Decimal from 'decimal.js'
 
@@ -17,7 +17,6 @@ type TimeEntryContextType = {
   permittedDepartments: Department[]
   permittedDepartmentsMap: { [key: string]: Department }
   submitAllForApproval: () => void
-  userPermittedDepartments: Record<string, EmployeeDepartment> | null
 }
 
 const TimeEntryContext = createContext<TimeEntryContextType | undefined>(undefined)
@@ -26,15 +25,13 @@ export function TimeEntryProvider({ children,
   currentEntry: currentEntryProp,
   recentEntries: recentEntriesProp,
   departments: departmentsProp,
-  permittedDepartments: permittedDepartmentsProp,
-  permittedDepartmentsWithRates: permittedDepartmentsWithRatesProp
+  permittedDepartments: permittedDepartmentsProp
 }: {
     children: React.ReactNode,
     permittedDepartments: Department[],
     currentEntry: TimeEntry | null,
     recentEntries: TimeEntry[],
-    departments: Department[],
-    permittedDepartmentsWithRates: EmployeeDepartment[] | null
+    departments: Department[]
   }) {
   const [currentEntry, setCurrentEntry] = useState<TimeEntry | null>(currentEntryProp)
   const [recentEntries, setRecentEntries] = useState<TimeEntry[]>(recentEntriesProp)
@@ -43,8 +40,6 @@ export function TimeEntryProvider({ children,
   const [loading, setLoading] = useState(false)
   const [permittedDepartments, setPermittedDepartments] = useState<Department[]>(permittedDepartmentsProp)
   const [permittedDepartmentsMap, setPermittedDepartmentsMap] = useState<{ [key: string]: Department }>({});
-  const [userPermittedDepartments, setUserPermittedDepartments] = useState<Record<string, EmployeeDepartment> | null>(null);
-  
 
   useEffect(() => {
     setLoading(true)
@@ -66,18 +61,6 @@ export function TimeEntryProvider({ children,
     setCurrentEntry(newEntry)
     addEntry(newEntry)
   }
-
-  useEffect(() => {
-    setLoading(true);
-    if (permittedDepartmentsWithRatesProp) {
-      const deptMap = permittedDepartmentsWithRatesProp.reduce((map, dept) => {
-        map[dept.departmentId] = dept;
-        return map;
-      }, {} as Record<string, EmployeeDepartment>);
-      setUserPermittedDepartments(deptMap);
-    }
-    setLoading(false);
-  }, [permittedDepartmentsWithRatesProp]);
 
   const clockOut = async (timeEntryId: string) => {
 
@@ -115,23 +98,7 @@ export function TimeEntryProvider({ children,
     ))
   }
   return (
-    <TimeEntryContext.Provider 
-      value={{
-          currentEntry,
-          recentEntries,
-          clockIn,
-          clockOut,
-          submitAllForApproval,
-          permittedDepartmentsMap,
-          addEntry,
-          permittedDepartments,
-          loading,
-          setLoading,
-          departments,
-          departmentMap,
-          userPermittedDepartments,
-        }}
-    >
+    <TimeEntryContext.Provider value={{ currentEntry, recentEntries, clockIn, clockOut,submitAllForApproval, permittedDepartmentsMap, addEntry, permittedDepartments, loading, setLoading, departments, departmentMap }}>
       {children}
     </TimeEntryContext.Provider>
   )

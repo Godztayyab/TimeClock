@@ -5,8 +5,8 @@ import { Header } from "@/components/header/Header";
 import { TimeEntryProvider } from "@/_context/TimeEntryContext";
 import { Toaster } from "@/components/ui/toaster";
 import { getActiveTimeEntry, getUserTimeEntries } from "@/actions/time-entry";
-import { Department, TimeEntry } from "@prisma/client";
-import { getAllDepartmentsInfo, getPermittedDepartmentsInfo } from "@/actions/department";
+import { Department, EmployeeDepartment, TimeEntry } from "@prisma/client";
+import { getAllDepartmentsInfo, getPermittedDepartmentsInfo, getUserPermittedDepartmentsInfoWithRates } from "@/actions/department";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Metadata } from "next";
@@ -45,32 +45,23 @@ export default async function ProtectedLayout({
   let recentEntries: TimeEntry[] = [];
   let departments: Department[] = [];
   let permittedDepartments: Department[] = [];
+  let permittedDepartmentsWithRates: EmployeeDepartment[] | null = null; 
 
 
-  if (user && user.id) {
-    await getActiveTimeEntry(user.id).then((entry) => {
-      if (entry.data)
-        currentEntry = entry.data;
-    }
-    );
+if (user && user.id) {
+    const [activeEntry, userEntries, allDepts, permittedDepts, permittedDeptsRates] = await Promise.all([
+      getActiveTimeEntry(user.id),
+      getUserTimeEntries(user.id),
+      getAllDepartmentsInfo(),
+      getPermittedDepartmentsInfo(user.id),
+      getUserPermittedDepartmentsInfoWithRates(user.id)
+    ]);
 
-    await getUserTimeEntries(user.id).then((entries) => {
-      if (entries.data)
-        recentEntries = entries.data
-    });
-
-    await getAllDepartmentsInfo().then((departments_resp) => {
-      if (departments_resp && departments_resp.departments) {
-        departments = departments_resp.departments;
-      }
-    });
-
-    await getPermittedDepartmentsInfo(user.id).then((data) => {
-      if (data && data.departments) {
-        permittedDepartments = data.departments;
-      }
-    }
-    );
+    if (activeEntry.data) currentEntry = activeEntry.data;
+    if (userEntries.data) recentEntries = userEntries.data;
+    if (allDepts?.departments) departments = allDepts.departments;
+    if (permittedDepts?.departments) permittedDepartments = permittedDepts.departments;
+    if (permittedDeptsRates?.success) permittedDepartmentsWithRates = permittedDeptsRates.departments;
   }
 
   return (
@@ -78,7 +69,7 @@ export default async function ProtectedLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-yellow-50`}>
 
         <SessionProvider session={session}>
-          <TimeEntryProvider currentEntry={currentEntry} recentEntries={recentEntries} departments={departments} permittedDepartments={permittedDepartments}>
+          <TimeEntryProvider currentEntry={currentEntry} recentEntries={recentEntries} departments={departments} permittedDepartments={permittedDepartments} permittedDepartmentsWithRates={permittedDepartmentsWithRates}>
 
             <Header user={user ?? null} />
             {children}

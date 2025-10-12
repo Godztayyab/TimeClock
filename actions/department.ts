@@ -133,4 +133,16 @@ export const getEmployeePermittedDepartmentsInfo = async (userId: string, employ
   }
 }
 
+export const getUserPermittedDepartmentsInfoWithRates = async (userId: string) => {
+  if (!userId) {
+    return { error: "User ID is required." };
+  }
+  const departments = await departmentService.getUserPermittedDepartmentsInfoWithRates(userId);
+  if (departments) {
+    return { departments: departments, success: "Departments retrieved successfully!" };
+  } else {
+    return { error: "Failed to get departments." };
+  }
+}
+
 

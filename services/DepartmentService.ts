@@ -563,6 +563,19 @@ class DepartmentService {
       return null;
     }
   }
+  async getUserPermittedDepartmentsInfoWithRates(userId: string): Promise<EmployeeDepartment[] | null> {
+    try {
+      const departments = await db.employeeDepartment.findMany({
+        where: {
+          userId,
+        },
+      });
+      return departments;
+    } catch (error) {
+      console.error("Error getting permitted departments:", error);
+      return null;
+    }
+  }
 }
 
 export const departmentService = new DepartmentService();

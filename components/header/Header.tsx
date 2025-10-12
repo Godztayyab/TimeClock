@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { UserButton } from '../auth/user-button'
 import { NotificationsPopover } from './Notifications'
 import { en } from "@/en";
+import { Badge } from '@/components/ui/badge'
 
 
 interface HeaderProps {
@@ -36,6 +37,9 @@ export function Header({ user }: HeaderProps) {
         <div className="flex items-center space-x-4">
           {user ? (
             <>
+            <Badge variant="secondary">
+             {user?.role}
+            </Badge>
               <NotificationsPopover />
               <UserButton />
             </>
