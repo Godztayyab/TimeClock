@@ -4,6 +4,9 @@ A comprehensive employee time management system built with Next.js 14 and TypeSc
 
 ![Landing Hero](./public/snapshots/landing-hero.png)
 
+### Demo website
+Webiste: [tahirtimeclock.netlify.app](https://tahirtimeclock.netlify.app/)
+
 ### Demo Credentials
 
 ```typescript
@@ -94,7 +97,7 @@ Manager:   manager@timeclock.com / manager123
 - Prisma ORM
 - PostgreSQL
 - Auth.js v5
-- Resend for emails
+- Google SMTP or Resend for emails
 
 ### Infrastructure
 - Vercel deployment
@@ -127,19 +130,29 @@ Manager:   manager@timeclock.com / manager123
 
    Configure the following in `.env`:
    ```bash
-   # Application
-   NEXT_PUBLIC_APP_URL="http://localhost:3000"
-   AUTH_SECRET="your_auth_secret"
+    # Database configuration
+    DATABASE_URL="mysql://username:password@localhost:3306/timeclock"
 
-   # Authentication
-   GOOGLE_CLIENT_ID="your_google_client_id"
-   GOOGLE_CLIENT_SECRET="your_google_client_secret"
+    # Authentication
+    AUTH_SECRET="your_auth_secret"
+    AUTH_TRUST_HOST=true
 
-   # Database
-   DATABASE_URL="postgresql://your_database_owner:your_password@your_host/your_database?sslmode=require"
+    # Application URL
+    NEXT_PUBLIC_APP_URL="http://localhost:3000"
 
-   # Email
-   RESEND_API_KEY="your_resend_api_key"
+    # Google OAuth credentials
+    GOOGLE_CLIENT_ID="your_google_client_id"
+    GOOGLE_CLIENT_SECRET="your_google_client_secret"
+
+    # Google SMTP credentials
+    GOOGLE_SMTP_USER="your_email@gmail.com"
+    GOOGLE_SMTP_PASS="your_google_app_password"
+
+    # Resend API key
+    RESEND_API_KEY="your_resend_api_key"
+
+    # Email service (google or resend)
+    EMAIL_SERVICE="google"
    ```
 
 4. Run Prisma migration:
