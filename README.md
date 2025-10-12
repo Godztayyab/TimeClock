@@ -2,7 +2,7 @@
 
 A comprehensive employee time management system built with Next.js 14 and TypeScript. Manage timesheets, schedules, departments, and leave requests with real-time updates.
 
-![Landing Hero](./public/snapshots/landing-hero.png)
+![Landing Hero](./public/gif/timeclock.gif)
 
 ### Demo website
 Webiste: [tahirtimeclock.netlify.app](https://tahirtimeclock.netlify.app/)
